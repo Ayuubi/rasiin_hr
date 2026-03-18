@@ -174,7 +174,7 @@ def get_em_checking(filters , emp = None):
 							time_out_str = ""
 							time_out = ""
 						# else:
-					if check_time_in and che_shift.two_date_shift and not che_shift.full:
+					if check_time_in and che_shift.two_date_shift:
 						if  is_time_between(shift_str , shift_end , check_time_in) :
 							time_in_str = ""
 							time_in = ""

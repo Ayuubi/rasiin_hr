@@ -10,7 +10,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letter_head": "logo",
- "modified": "2025-06-16 09:28:24.410086",
+ "modified": "2026-02-26 12:29:16.664047",
  "modified_by": "Administrator",
  "module": "Rasiin Hr",
  "name": "Employee Salary Register",
@@ -25,6 +25,9 @@
   },
   {
    "role": "HR Manager"
+  },
+  {
+   "role": "Finance"
   }
  ]
 }

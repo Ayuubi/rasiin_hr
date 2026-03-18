@@ -76,15 +76,16 @@
   },
   {
    "fieldname": "department",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Department"
+   "label": "Department",
+   "options": "Department"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-08 16:10:53.205865",
+ "modified": "2026-02-15 13:39:47.242683",
  "modified_by": "Administrator",
  "module": "Rasiin Hr",
  "name": "Employee Schedulling",

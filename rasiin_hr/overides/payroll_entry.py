@@ -892,8 +892,11 @@ class PayrollEntry(Document):
 						],
 					)
 					if only_tax_impact != 1 and statistical_component != 1:
-						if is_flexible_benefit == 1 and creat_separate_je == 1:
+						# if is_flexible_benefit == 1 and creat_separate_je == 1:
+						# 	self.create_journal_entry(sal_detail.amount, sal_detail.salary_component)
+						if flt(sal_detail.amount) and is_flexible_benefit == 1 and creat_separate_je == 1:
 							self.create_journal_entry(sal_detail.amount, sal_detail.salary_component)
+
 						else:
 							if process_payroll_accounting_entry_based_on_employee:
 								self.set_employee_based_payroll_payable_entries(
@@ -953,6 +956,11 @@ class PayrollEntry(Document):
 				je_payment_amount = employee_details.get("earnings", 0) - (
 					employee_details.get("deductions", 0)
 				)
+				net = flt(employee_details.get("earnings", 0)) - flt(employee_details.get("deductions", 0))
+
+				# ✅ SKIP employees who won't be paid
+				if not flt(net, precision):
+					continue
 				exchange_rate, amount = self.get_amount_and_exchange_rate_for_journal_entry(
 					self.payment_account, je_payment_amount, company_currency, currencies
 				)
