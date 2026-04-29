@@ -160,9 +160,10 @@ def import_employee_schedule_from_file(file_url: str, year: int, month: int, ove
 
     shift_map = {
         "D": "Day Shift",
+        "M": "MNGT",
         "N": "Night Shift",
         "DN": "Day and Night Shift",
-        "ND": "Night Day Shift",
+        "SH12": "shift lawo iyo tobanka",
         "CANTEEN": "CANTEEN",
         "OFF": "Free",
         "OF": "Free",
